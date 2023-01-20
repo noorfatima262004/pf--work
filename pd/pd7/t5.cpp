@@ -1,13 +1,19 @@
 #include <iostream>
 using namespace std;
+void hospital(int patients, int days);
 main()
 {
     int patients;
     int days;
-    int treatedpat = 0, untreatedpat = 0;
-    int doc = 7;
+
     cout << "Enter the days for calculations= ";
     cin >> days;
+    hospital(patients, days);
+}
+void hospital(int patients, int days)
+{
+    int treatedpat = 0, untreatedpat = 0;
+    int doc = 7;
     for (int x = 1; x <= days; x++)
     {
 
@@ -18,20 +24,18 @@ main()
         {
             treatedpat = patients + treatedpat;
         }
-        else if (patients > doc)
+        if (days % 3 == 0 && (patients > doc))
+        {
+
+            doc = doc + 1;
+        }
+        if (patients > doc)
         {
             treatedpat = treatedpat + doc;
             untreatedpat = untreatedpat + (patients - doc);
         }
-        if (days % 3 == 0)
-        {
-
-            if (untreatedpat > treatedpat)
-            {
-                doc++;
-            }
-        }
+        
     }
-    cout << "TREATED PATIENTS=" << treatedpat  << endl;
-    cout << "UNTREATED PATIENTS=" << untreatedpat  << endl;
+    cout << "TREATED PATIENTS=" << treatedpat << endl;
+    cout << "UNTREATED PATIENTS=" << untreatedpat << endl;
 }

@@ -1,26 +1,33 @@
 #include <iostream>
 using namespace std;
+void triangle(int rows);
 main()
 {
     int rows;
-    int doublerows;
-    int columns;
-    cout << "Enter rows=";
+    cout << "Enter number of rows:";
     cin >> rows;
-    doublerows = rows * 2;
-    for(int r = 1; r <= rows; r++)
+    triangle(rows);
+}
+void triangle(int rows)
+{
+    for (int row1 = rows; row1 >= 1; row1--)
     {
-        for(int c =1 ;c < doublerows ; c++)
+        for (int column = row1; column <= rows; column++)
         {
-            columns = doublerows - r;
-            if(c <= r)
             cout << "*";
-            else if((c >= columns) && (c< doublerows))
-            cout << "*";
-            else 
+        }
+        for (int space = row1; space >= 2; space--)
+        {
             cout << " ";
         }
+        for (int column = row1; column >= 2; column--)
+        {
+            cout << " ";
+        }
+        for (int space = row1; space <= rows; space++)
+        {
+            cout << "*";
+        }
         cout << endl;
-
     }
 }
