@@ -10,6 +10,7 @@ main()
 
     cout << "Enter the num of cargo=";
     cin >> cargo;
+
     for (int x = 1; x <= cargo; x++)
     {
         cout << "Enter the tonage=";
