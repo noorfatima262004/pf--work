@@ -14,11 +14,6 @@ main()
         if (num[x] > largest)
         
             largest = num[x];
-       // else if
-        //{
-          //  largest = 0;
-           // largest = num[x];
-        //}
 
     }
     cout << largest;

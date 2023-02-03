@@ -26,16 +26,12 @@ main()
 
     float array3[size1 + size2];
     array3[0] = array1[0];
-    // float total1 = array3[0];
     array3[(size1 + size2) - 1] = array1[1];
-    // float total2 = array3[(size1 + size2) - 1];
 
     for (int x = 1; x <= size2; x++)
     {
         array3[x] = array2[x - 1];
         cout << array3[x];
-        // cout  << total3 ;
-        // cout << array3[0];
     }
     cout << endl;
     for (int x = 0; x < (size1 + size2); x++)
