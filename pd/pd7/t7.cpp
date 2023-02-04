@@ -35,6 +35,7 @@ main()
         }
     }
     int sum = minibus + truck + train;
+    cout << sum << endl;
     percentage1 = (minibus * 100) / sum;
     percentage2 = (truck * 100) / sum;
     percentage3 = (train * 100) / sum;

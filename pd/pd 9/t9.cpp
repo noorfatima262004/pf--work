@@ -1,37 +1,114 @@
+           // code without asci 
+
 #include <iostream>
 using namespace std;
+int newnum[4];
+string moves[10] = {"Shimmy", "Shake", "Pirouette", "Slide", "Box Step", "Headspin", "Dosado", "Pop", "Lock", "Arabesque"};
+void move(string pin);
 main()
 {
-    int arrsize = 4;
-    int store = 0;
-    int p =0;
+    string pin;
+    int position = 0;
+    int codelength;
 
-    string dance[10] = {"Shimmy", "Shake", "Piroutte", "Slide", "BOx Step", "Headspin", "Dosado", "pop", "LOck ", "Arabesque"};
-    int moves[arrsize];
+    cout << "Enter the pin = ";
+    cin >> pin;
+    codelength = pin.length();
 
-    for (int index = 0; index < 4; index++)
+    if (codelength == 4)
     {
-        cout << "Enter a number: ";
-        cin >> moves[index];
-         p = moves[index];
-    }
-  
-
-    if (p > -1 && p < 10) 
-    {
-        for (int index = 0; index < 4; index++)
+        for (int x = 0; x < 4; x++)
         {
-            store = moves[index] + index;
-
-            if (store > 9)
+            if (pin[x] != '0' && pin[x] != '1' && pin[x] != '2' && pin[x] != '3' && pin[x] != '4' && pin[x] != '5' && pin[x] != '6' && pin[x] != '7' && pin[x] != '8' && pin[x] != '9')
             {
-                store = store - 10;
-                
+                cout << "INVALID INPUT...";
+                return 0;
             }
-
-            cout << dance[store] << " ,";
         }
     }
     else
-        cout << "INVALID INPUT..";
+    {
+        cout << "INVALID INPUT....";
+        return 0;
+    }
+
+    move(pin);
+
+    for (int x = 0; x < 4; x++)
+    {
+        position = newnum[x] + x;
+        if (position <= 9)
+        {
+            cout << moves[position] << " ";
+        }
+        else if (position > 9)
+        {
+            position = position - 10;
+            cout << moves[position] << " ";
+        }
+    }
+}
+void move(string pin)
+{
+    for (int x = 0; x < 4; x++)
+    {
+
+        if (pin[x] == '0')
+        {
+            newnum[x] = 0;
+            continue;
+        }
+
+        else if (pin[x] == '1')
+        {
+            newnum[x] = 1;
+            continue;
+        }
+
+        else if (pin[x] == '2')
+        {
+            newnum[x] = 2;
+            continue;
+        }
+
+        else if (pin[x] == '3')
+        {
+            newnum[x] = 3;
+            continue;
+        }
+
+        else if (pin[x] == '4')
+        {
+            newnum[x] = 4;
+            continue;
+        }
+
+        else if (pin[x] == '5')
+        {
+            newnum[x] = 5;
+            continue;
+        }
+
+        else if (pin[x] == '6')
+        {
+            newnum[x] = 6;
+            continue;
+        }
+
+        else if (pin[x] == '7')
+        {
+            newnum[x] = 7;
+            continue;
+        }
+        else if (pin[x] == '8')
+        {
+            newnum[x] = 8;
+            continue;
+        }
+        else if (pin[x] == '9')
+        {
+            newnum[x] = 9;
+            continue;
+        }
+    }
 }
